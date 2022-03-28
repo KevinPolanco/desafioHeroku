@@ -26,7 +26,7 @@ const postUser = async (username, email, contrasena) => {
     const client = await pool.connect()
     const query = {
         text: 'INSERT INTO users (username, email, contrasena, fecha) values ($1, $2, $3, (current_date)) RETURNING *',
-        values:[username, email, contrasena,]
+        values:[username, email, contrasena]
     }
     try{
         const result = await client.query(query)
@@ -40,7 +40,6 @@ const postUser = async (username, email, contrasena) => {
 
 const deleteUser = async (id) => {
     const client = await pool.connect()
-    await client.connect();
     const query =  {
         text: 'DELETE FROM users WHERE id =$1',
         values:[id]
