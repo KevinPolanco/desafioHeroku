@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contraseña</th>
+      <th scope="col">Fecha de creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each todos}}
+        <from>
+            <th>{{this.id}}</th>
+            <td>{{this.username}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.contrasena}}</td>
+            <td>{{formateoDeFecha this.fecha}}</td>
+            <td><a href="http://localhost:5000/user-delete/{{this.id}}"><button class="btn btn-danger">Eliminar</button></a></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
