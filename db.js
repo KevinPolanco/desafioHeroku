@@ -1,4 +1,4 @@
-// require('dotenv').config()
+//require('dotenv').config()
 
 const {Pool} = require('pg')
 
@@ -6,7 +6,7 @@ const connectionString = process.env.DATABASE_URL ||
     'postgresql://postgres:root@localhost:5432/heroku'
 
 const pool = new Pool({
-    connectionString: connectionString,
+    connectionString: process.env.DATABASE_URL,
     ssl: {rejectUnauthorized: false}
 })
 
